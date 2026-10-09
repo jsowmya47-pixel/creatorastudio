@@ -292,3 +292,32 @@ h2 { font-family: var(--display); font-size: clamp(3.7rem, 8.4vw, 8.5rem); line-
 .service-link p {
     color: var(--muted);
 }
+
+
+
+
+
+
+.contact-email {
+    margin-top: 25px;
+}
+
+.contact-email p {
+    color: var(--muted, #a5a3a0);
+    line-height: 1.8;
+}
+
+.contact-email a {
+    display: inline-block;
+    margin: 10px 0;
+    color: var(--red, #ff3439);
+    font-size: clamp(18px, 3vw, 28px);
+    font-weight: 700;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.3s ease;
+}
+
+.contact-email a:hover {
+    color: var(--white, #f5f3ef);
+}
