@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Web Design & Development | CREATORA</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon1.jpeg">
+
+  <style>
+    .web-hero {
+      padding: 100px 9% 75px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .web-hero .eyebrow {
+      margin: 0 0 25px;
+    }
+
+    .web-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(4rem, 12vw, 10rem);
+      line-height: .85;
+      margin: 0;
+      color: var(--white);
+    }
+
+    .web-hero h1 span {
+      color: var(--red);
+    }
+
+    .web-hero p {
+      color: var(--muted);
+      max-width: 580px;
+      line-height: 1.9;
+      margin-top: 30px;
+    }
+
+    .web-section {
+      padding: 80px 9%;
+    }
+
+    .web-section h2 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      margin-bottom: 20px;
+    }
+
+    .web-intro {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .idea-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .idea-card {
+      padding: 28px;
+      min-height: 240px;
+      border: 1px solid var(--line);
+      background: var(--bg-soft);
+      transition: .25s;
+    }
+
+    .idea-card:hover {
+      border-color: var(--red);
+      transform: translateY(-4px);
+    }
+
+    .idea-card .number {
+      font: 11px var(--mono);
+      color: var(--red);
+    }
+
+    .idea-card h3 {
+      font: 700 30px var(--display);
+      margin: 32px 0 12px;
+    }
+
+    .idea-card p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .idea-card a {
+      display: inline-block;
+      color: var(--red);
+      font: 11px var(--mono);
+      margin-top: 12px;
+    }
+
+    .process {
+      background: var(--red);
+      color: var(--bg);
+    }
+
+    .process h2 {
+      margin-bottom: 40px;
+    }
+
+    .process-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .process-item {
+      border-top: 1px solid rgba(0,0,0,.4);
+      padding-top: 20px;
+    }
+
+    .process-item span {
+      font: 12px var(--mono);
+    }
+
+    .process-item h3 {
+      font: 700 28px var(--display);
+    }
+
+    .process-item p {
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .brief {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .brief label {
+      display: block;
+      font: 11px var(--mono);
+      margin: 22px 0 10px;
+      color: var(--muted);
+    }
+
+    .brief input,
+    .brief select,
+    .brief textarea {
+      width: 100%;
+      padding: 15px;
+      background: var(--bg-soft);
+      color: var(--white);
+      border: 1px solid var(--line);
+      font: 14px var(--body);
+    }
+
+    .brief button {
+      margin-top: 25px;
+      padding: 16px 24px;
+      border: 0;
+      background: var(--red);
+      color: var(--bg);
+      font: 700 12px var(--mono);
+      cursor: pointer;
+    }
+
+    .brief button:hover {
+      background: var(--white);
+    }
+
+    @media (max-width: 650px) {
+      .web-hero,
+      .web-section {
+        padding: 65px 6%;
+      }
+
+      .idea-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="brand">
+    CREATORA<span>®</span>
+  </a>
+
+  <a href="index.html" class="text-link">← BACK TO HOME</a>
+</header>
+
+<main>
+
+  <section class="web-hero">
+    <p class="eyebrow">01 / CREATIVE DEVELOPMENT STUDIO</p>
+
+    <h1>
+      YOUR IDEA.<br>
+      <span>YOUR WEBSITE.</span>
+    </h1>
+
+    <p>
+      From your first sketch to a fully responsive website,
+      explore creative concepts, discover design directions,
+      and turn your ideas into digital experiences.
+    </p>
+
+    <a href="#ideas" class="text-link">
+      EXPLORE WEBSITE IDEAS ↘
+    </a>
+  </section>
+
+  <section class="web-section" id="ideas">
+    <p class="section-label">01 / THE IDEA LAB</p>
+
+    <h2>WHAT DO YOU<br><span class="red-text">WANT TO BUILD?</span></h2>
+
+    <p class="web-intro">
+      Start with an idea. Choose a direction.
+      Build something that feels like you.
+    </p>
+
+    <div class="idea-grid">
+
+      <article class="idea-card">
+        <span class="number">IDEA / 001</span>
+        <h3>PERSONAL PORTFOLIO</h3>
+        <p>
+          Turn your skills, projects, resume and achievements
+          into a portfolio that represents your identity.
+        </p>
+        <a href="#brief" data-idea="Personal portfolio">
+          BUILD THIS IDEA ↗
+        </a>
+      </article>
+
+      <article class="idea-card">
+        <span class="number">IDEA / 002</span>
+        <h3>BUSINESS WEBSITE</h3>
+        <p>
+          Introduce your brand, explain your services,
+          build trust and help customers contact you.
+        </p>
+        <a href="#brief" data-idea="Business website">
+          BUILD THIS IDEA ↗
+        </a>
+      </article>
+
+      <article class="idea-card">
+        <span class="number">IDEA / 003</span>
+        <h3>ONLINE STORE</h3>
+        <p>
+          Showcase products with beautiful product cards,
+          categories, shopping features and a modern layout.
+        </p>
+        <a href="#brief" data-idea="Online store">
+          BUILD THIS IDEA ↗
+        </a>
+      </article>
+
+      <article class="idea-card">
+        <span class="number">IDEA / 004</span>
+        <h3>LANDING PAGE</h3>
+        <p>
+          Create a focused page for a launch, an event,
+          a product, a campaign or a new startup.
+        </p>
+        <a href="#brief" data-idea="Landing page">
+          BUILD THIS IDEA ↗
+        </a>
+      </article>
+
+      <article class="idea-card">
+        <span class="number">IDEA / 005</span>
+        <h3>CREATOR WEBSITE</h3>
+        <p>
+          Bring your videos, social links, content,
+          collaborations and creator identity into one place.
+        </p>
+        <a href="#brief" data-idea="Creator website">
+          BUILD THIS IDEA ↗
+        </a>
+      </article>
+
+      <article class="idea-card">
+        <span class="number">IDEA / 006</span>
+        <h3>WEB APP / DASHBOARD</h3>
+        <p>
+          Plan an interactive product with user accounts,
+          dashboards, forms, data and useful tools.
+        </p>
+        <a href="#brief" data-idea="Web app or dashboard">
+          BUILD THIS IDEA ↗
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="web-section process">
+    <p class="section-label">02 / HOW WE BUILD</p>
+    <h2>IDEA TO<br>IMPLEMENTATION.</h2>
+
+    <div class="process-list">
+      <article class="process-item">
+        <span>STEP / 01</span>
+        <h3>IDEATE</h3>
+        <p>Define the goal, audience and core idea.</p>
+      </article>
+
+      <article class="process-item">
+        <span>STEP / 02</span>
+        <h3>DESIGN</h3>
+        <p>Plan the layout, typography, colours and user journey.</p>
+      </article>
+
+      <article class="process-item">
+        <span>STEP / 03</span>
+        <h3>DEVELOP</h3>
+        <p>Build the website using HTML, CSS and JavaScript.</p>
+      </article>
+
+      <article class="process-item">
+        <span>STEP / 04</span>
+        <h3>LAUNCH</h3>
+        <p>Test responsiveness, fix issues and publish online.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="web-section" id="brief">
+    <p class="section-label">03 / YOUR NEXT PROJECT</p>
+
+    <div class="brief">
+      <h2>LET'S MAKE<br><span class="red-text">IT REAL.</span></h2>
+
+      <p class="web-intro">
+        Describe the website you have in mind.
+        Start shaping your next digital idea.
+      </p>
+
+      <form id="projectForm">
+
+        <label for="projectName">PROJECT NAME</label>
+        <input id="projectName" name="projectName"
+          placeholder="e.g. My Portfolio" required>
+
+        <label for="projectType">WEBSITE TYPE</label>
+        <select id="projectType" name="projectType" required>
+          <option value="">Choose an idea</option>
+          <option>Personal portfolio</option>
+          <option>Business website</option>
+          <option>Online store</option>
+          <option>Landing page</option>
+          <option>Creator website</option>
+          <option>Web app or dashboard</option>
+          <option>Other idea</option>
+        </select>
+
+        <label for="projectStyle">DESIGN STYLE</label>
+        <select id="projectStyle" name="projectStyle">
+          <option>Dark and bold</option>
+          <option>Minimal and clean</option>
+          <option>Luxury and elegant</option>
+          <option>Colourful and creative</option>
+          <option>Futuristic and interactive</option>
+        </select>
+
+        <label for="projectDetails">TELL US YOUR IDEA</label>
+        <textarea id="projectDetails" name="projectDetails"
+          rows="5" placeholder="What should your website do?"></textarea>
+
+        <button type="submit">GENERATE PROJECT BRIEF ↗</button>
+      </form>
+
+      <div id="briefResult" aria-live="polite"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <a href="index.html" class="brand footer-brand">
+    CREATORA<span>®</span>
+  </a>
+  <p>CREATE — IMPLEMENT</p>
+  <a href="#home" class="back-top">BACK TO TOP ↑</a>
+</footer>
+
+<script>
+  // Select an idea and prefill the project type
+  document.querySelectorAll("[data-idea]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      document.getElementById("projectType").value =
+        link.getAttribute("data-idea");
+    });
+  });
+
+  // Generate a project brief in the browser
+  document.getElementById("projectForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("projectName").value.trim();
+    const type = document.getElementById("projectType").value;
+    const style = document.getElementById("projectStyle").value;
+    const details = document.getElementById("projectDetails").value.trim();
+
+    const brief = [
+      "CREATORA — PROJECT BRIEF",
+      "Project: " + name,
+      "Website type: " + type,
+      "Design direction: " + style,
+      "Project idea: " + (details || "To be decided"),
+      "",
+      "NEXT STEPS",
+      "1. Plan the sitemap and page sections.",
+      "2. Create a wireframe and visual design.",
+      "3. Develop and test the responsive website.",
+      "4. Prepare for launch."
+    ].join("\n");
+
+    const result = document.getElementById("briefResult");
+    result.replaceChildren();
+
+    const heading = document.createElement("h3");
+    heading.textContent = "YOUR PROJECT BRIEF";
+
+    const output = document.createElement("pre");
+    output.textContent = brief;
+    output.style.whiteSpace = "pre-wrap";
+    output.style.fontFamily = "var(--mono)";
+    output.style.fontSize = "12px";
+    output.style.lineHeight = "1.9";
+    output.style.padding = "20px";
+    output.style.background = "var(--bg-soft)";
+    output.style.color = "var(--white)";
+    output.style.overflowWrap = "anywhere";
+
+    const copyButton = document.createElement("button");
+    copyButton.type = "button";
+    copyButton.textContent = "COPY PROJECT BRIEF";
+
+    copyButton.addEventListener("click", async function () {
+      try {
+        await navigator.clipboard.writeText(brief);
+        copyButton.textContent = "COPIED!";
+      } catch {
+        const range = document.createRange();
+        range.selectNodeContents(output);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        copyButton.textContent = "SELECTED — COPY WITH CTRL+C";
+      }
+    });
+
+    result.append(heading, output, copyButton);
+    result.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>
+
+</body>
+</html>

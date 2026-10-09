@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Content & Storytelling | CREATORA</title>
+    <link rel="icon" type="image/png" href="favicon1.jpeg">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg, #171717);
+            color: var(--white, #f5f3ef);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .story-page {
+            width: min(1100px, 90%);
+            margin: auto;
+            padding-bottom: 90px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 25px 0 45px;
+            color: var(--muted, #a5a3a0);
+            font-size: 13px;
+        }
+
+        .back-link:hover {
+            color: var(--red, #ff3439);
+        }
+
+        .eyebrow {
+            color: var(--red, #ff3439);
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .hero {
+            padding: 35px 0 70px;
+            border-bottom: 1px solid #393939;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 8vw, 90px);
+            line-height: 0.98;
+            letter-spacing: -3px;
+            margin: 0 0 25px;
+            max-width: 850px;
+        }
+
+        .hero h1 span {
+            color: var(--red, #ff3439);
+        }
+
+        .hero p {
+            max-width: 620px;
+            line-height: 1.8;
+            color: var(--muted, #a5a3a0);
+        }
+
+        .section {
+            padding: 65px 0;
+            border-bottom: 1px solid #393939;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(27px, 4vw, 42px);
+            margin: 8px 0 0;
+            letter-spacing: -1px;
+        }
+
+        .section-heading p {
+            color: var(--muted, #a5a3a0);
+            font-size: 13px;
+        }
+
+        .idea-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .idea-card {
+            text-align: left;
+            background: #202020;
+            color: var(--white, #f5f3ef);
+            border: 1px solid #373737;
+            padding: 25px;
+            min-height: 190px;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .idea-card:hover {
+            border-color: var(--red, #ff3439);
+            transform: translateY(-4px);
+        }
+
+        .idea-number {
+            color: var(--red, #ff3439);
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .idea-card h3 {
+            font-size: 19px;
+            margin: 25px 0 10px;
+        }
+
+        .idea-card p {
+            color: var(--muted, #a5a3a0);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .hook-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .hook {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            background: #202020;
+            border: 1px solid #373737;
+            padding: 20px;
+        }
+
+        .hook p {
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .hook button {
+            flex-shrink: 0;
+            background: transparent;
+            color: var(--red, #ff3439);
+            border: 1px solid var(--red, #ff3439);
+            padding: 9px 12px;
+            cursor: pointer;
+        }
+
+        .hook button:hover {
+            background: var(--red, #ff3439);
+            color: white;
+        }
+
+        .story-lab {
+            margin-top: 65px;
+            padding: clamp(22px, 5vw, 45px);
+            background: #202020;
+            border: 1px solid #393939;
+        }
+
+        .story-lab h2 {
+            font-size: clamp(30px, 5vw, 48px);
+            margin: 8px 0 12px;
+        }
+
+        .lab-intro {
+            color: var(--muted, #a5a3a0);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .story-form {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        .field label {
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            background: #171717;
+            color: #f5f3ef;
+            border: 1px solid #444;
+            padding: 14px;
+            font: inherit;
+            border-radius: 0;
+        }
+
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            outline: 1px solid var(--red, #ff3439);
+            border-color: var(--red, #ff3439);
+        }
+
+        .field textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .primary-button {
+            border: 1px solid var(--red, #ff3439);
+            background: var(--red, #ff3439);
+            color: white;
+            padding: 15px 22px;
+            font: inherit;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .primary-button:hover {
+            background: transparent;
+            color: var(--red, #ff3439);
+        }
+
+        .output {
+            display: none;
+            margin-top: 30px;
+            padding: 25px;
+            border: 1px solid #444;
+            background: #171717;
+        }
+
+        .output h3 {
+            margin-top: 0;
+        }
+
+        .output pre {
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            color: #d2d0cc;
+            font: inherit;
+            line-height: 1.8;
+        }
+
+        .output-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .secondary-button {
+            border: 1px solid #555;
+            background: transparent;
+            color: white;
+            padding: 12px 18px;
+            cursor: pointer;
+        }
+
+        .secondary-button:hover {
+            border-color: var(--red, #ff3439);
+        }
+
+        .footer-note {
+            padding-top: 30px;
+            color: var(--muted, #a5a3a0);
+            font-size: 12px;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            .idea-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .section-heading {
+                align-items: start;
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .idea-grid,
+            .hook-list,
+            .story-form {
+                grid-template-columns: 1fr;
+            }
+
+            .field.full {
+                grid-column: auto;
+            }
+
+            .hook {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="story-page">
+
+        <a href="index.html" class="back-link">← BACK TO CREATORA</a>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="eyebrow">CREATORA / CONTENT STUDIO</div>
+
+            <h1>
+                Every idea has a <span>story.</span>
+            </h1>
+
+            <p>
+                Turn your thoughts into meaningful content. Explore storytelling
+                ideas, discover attention-grabbing hooks, and build a script
+                outline for your next post, Reel, or YouTube Short.
+            </p>
+        </section>
+
+        <!-- CONTENT IDEAS -->
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">01 / GET INSPIRED</div>
+                    <h2>Find your next story.</h2>
+                </div>
+                <p>Select an idea to start creating.</p>
+            </div>
+
+            <div class="idea-grid">
+                <button class="idea-card" type="button"
+                    data-topic="My journey as a beginner content creator">
+                    <span class="idea-number">IDEA 01</span>
+                    <h3>The Beginning</h3>
+                    <p>Share how you started, what you learned, and what keeps you going.</p>
+                </button>
+
+                <button class="idea-card" type="button"
+                    data-topic="Lessons I learned from my biggest mistake">
+                    <span class="idea-number">IDEA 02</span>
+                    <h3>Lessons Learned</h3>
+                    <p>Turn a mistake or challenge into a useful, relatable story.</p>
+                </button>
+
+                <button class="idea-card" type="button"
+                    data-topic="A day in my life as a creator">
+                    <span class="idea-number">IDEA 03</span>
+                    <h3>Behind the Scenes</h3>
+                    <p>Show your process, routine, workspace, and creative moments.</p>
+                </button>
+
+                <button class="idea-card" type="button"
+                    data-topic="Three tips that make content creation easier">
+                    <span class="idea-number">IDEA 04</span>
+                    <h3>Quick Tips</h3>
+                    <p>Teach your audience something practical in a simple format.</p>
+                </button>
+
+                <button class="idea-card" type="button"
+                    data-topic="The reality behind social media success">
+                    <span class="idea-number">IDEA 05</span>
+                    <h3>Real Talk</h3>
+                    <p>Share an honest perspective that your audience can connect with.</p>
+                </button>
+
+                <button class="idea-card" type="button"
+                    data-topic="How I would start again with zero experience">
+                    <span class="idea-number">IDEA 06</span>
+                    <h3>What If I Started Again?</h3>
+                    <p>Share what you would do differently if you were starting today.</p>
+                </button>
+            </div>
+        </section>
+
+        <!-- HOOK LIBRARY -->
+        <section class="section">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">02 / GRAB ATTENTION</div>
+                    <h2>Start with a hook.</h2>
+                </div>
+                <p>Choose a line for your opening.</p>
+            </div>
+
+            <div class="hook-list">
+                <div class="hook">
+                    <p>"I wish I knew this before I started."</p>
+                    <button type="button"
+                        data-hook="I wish I knew this before I started.">
+                        USE ↗
+                    </button>
+                </div>
+
+                <div class="hook">
+                    <p>"Nobody talks about this part."</p>
+                    <button type="button"
+                        data-hook="Nobody talks about this part.">
+                        USE ↗
+                    </button>
+                </div>
+
+                <div class="hook">
+                    <p>"Here are three things I learned the hard way."</p>
+                    <button type="button"
+                        data-hook="Here are three things I learned the hard way.">
+                        USE ↗
+                    </button>
+                </div>
+
+                <div class="hook">
+                    <p>"If I had to start again, I would do this."</p>
+                    <button type="button"
+                        data-hook="If I had to start again, I would do this.">
+                        USE ↗
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- STORY LAB -->
+        <section class="story-lab" id="storyLab">
+            <div class="eyebrow">03 / YOUR CREATIVE SPACE</div>
+            <h2>Build your story.</h2>
+
+            <p class="lab-intro">
+                Fill in a few details to create a structured script outline.
+                You can edit the result and make it sound like you.
+            </p>
+
+            <form class="story-form" id="storyForm">
+                <div class="field full">
+                    <label for="topic">What is your content about?</label>
+                    <input
+                        type="text"
+                        id="topic"
+                        placeholder="e.g. My journey as a content creator"
+                        required
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="platform">Platform</label>
+                    <select id="platform">
+                        <option>YouTube Shorts</option>
+                        <option>Instagram Reels</option>
+                        <option>YouTube Video</option>
+                        <option>TikTok</option>
+                        <option>LinkedIn</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="goal">Content goal</label>
+                    <select id="goal">
+                        <option value="educate">Educate</option>
+                        <option value="inspire">Inspire</option>
+                        <option value="entertain">Entertain</option>
+                        <option value="connect">Connect with my audience</option>
+                        <option value="promote">Promote a product or service</option>
+                    </select>
+                </div>
+
+                <div class="field full">
+                    <label for="hookInput">Opening hook</label>
+                    <input
+                        type="text"
+                        id="hookInput"
+                        placeholder="Choose a hook above or write your own"
+                    >
+                </div>
+
+                <div class="field full">
+                    <label for="points">Key points to include</label>
+                    <textarea
+                        id="points"
+                        placeholder="Write your main ideas, experiences, tips, or lessons..."
+                    ></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="tone">Story tone</label>
+                    <select id="tone">
+                        <option>Relatable</option>
+                        <option>Aesthetic</option>
+                        <option>Professional</option>
+                        <option>Funny</option>
+                        <option>Emotional</option>
+                        <option>Motivational</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="ending">Call to action</label>
+                    <select id="ending">
+                        <option value="follow">Ask viewers to follow</option>
+                        <option value="comment">Ask viewers to comment</option>
+                        <option value="share">Encourage viewers to share</option>
+                        <option value="save">Ask viewers to save the post</option>
+                        <option value="reflect">End with a thought-provoking question</option>
+                    </select>
+                </div>
+
+                <div class="field full">
+                    <button class="primary-button" type="submit">
+                        CREATE MY SCRIPT OUTLINE ↗
+                    </button>
+                </div>
+            </form>
+
+            <div class="output" id="output" aria-live="polite">
+                <h3>Your story outline</h3>
+                <pre id="scriptOutput"></pre>
+
+                <div class="output-actions">
+                    <button class="primary-button" type="button" id="copyButton">
+                        COPY OUTLINE
+                    </button>
+                    <button class="secondary-button" type="button" id="editButton">
+                        EDIT DETAILS
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-note">
+            MADE FOR CREATORS, BY CREATORA © <span id="year"></span>
+        </div>
+    </main>
+
+    <script>
+        const topicInput = document.getElementById("topic");
+        const hookInput = document.getElementById("hookInput");
+        const storyLab = document.getElementById("storyLab");
+
+        // Choose an idea and send it to the Story Lab.
+        document.querySelectorAll(".idea-card").forEach(function (card) {
+            card.addEventListener("click", function () {
+                topicInput.value = card.dataset.topic;
+                storyLab.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+                topicInput.focus({ preventScroll: true });
+            });
+        });
+
+        // Choose a hook and fill the opening-hook field.
+        document.querySelectorAll("[data-hook]").forEach(function (button) {
+            button.addEventListener("click", function () {
+                hookInput.value = button.dataset.hook;
+                storyLab.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+                hookInput.focus({ preventScroll: true });
+            });
+        });
+
+        // Build a reusable script outline from the form.
+        document.getElementById("storyForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const topic = topicInput.value.trim();
+            const platform = document.getElementById("platform").value;
+            const goal = document.getElementById("goal").value;
+            const tone = document.getElementById("tone").value;
+            const hook = hookInput.value.trim() ||
+                "Have you ever thought about " + topic.toLowerCase() + "?";
+            const points = document.getElementById("points").value.trim();
+            const ending = document.getElementById("ending").value;
+
+            const goalText = {
+                educate: "Teach the audience something useful.",
+                inspire: "Encourage the audience with a meaningful message.",
+                entertain: "Keep the story engaging, fun, and memorable.",
+                connect: "Build a genuine connection through a relatable experience.",
+                promote: "Explain the value of the product or service naturally."
+            };
+
+            const endingText = {
+                follow: "If you enjoyed this, follow for more.",
+                comment: "What do you think? Share your thoughts in the comments.",
+                share: "Share this with someone who needs to hear it.",
+                save: "Save this post so you can come back to it.",
+                reflect: "What would you do in this situation?"
+            };
+
+            const keyPoints = points
+                ? points
+                : "Add your experience, three key points, or a useful lesson here.";
+
+            const outline =
+`CREATORA — STORY OUTLINE
+
+TOPIC
+${topic}
+
+PLATFORM
+${platform}
+
+TONE
+${tone}
+
+GOAL
+${goalText[goal]}
+
+1. THE HOOK
+${hook}
+
+2. THE SETUP
+Introduce the topic: "${topic}".
+Explain why it matters to your audience.
+
+3. THE MAIN STORY
+${keyPoints}
+
+4. THE TAKEAWAY
+Summarize the most important lesson or idea.
+Keep the message clear and aligned with your ${tone.toLowerCase()} tone.
+
+5. THE CALL TO ACTION
+${endingText[ending]}
+
+CREATOR TIP
+Start strong, keep each point focused, and finish with one clear message.
+
+Note: This is a structured outline template. Personalize the details and wording before publishing.`;
+
+            document.getElementById("scriptOutput").textContent = outline;
+
+            const output = document.getElementById("output");
+            output.style.display = "block";
+            output.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+
+        // Copy the generated outline.
+        document.getElementById("copyButton").addEventListener("click", async function () {
+            const text = document.getElementById("scriptOutput").textContent;
+            const button = this;
+
+            try {
+                await navigator.clipboard.writeText(text);
+                button.textContent = "COPIED ✓";
+                setTimeout(function () {
+                    button.textContent = "COPY OUTLINE";
+                }, 1800);
+            } catch (error) {
+                const selection = window.getSelection();
+                const range = document.createRange();
+                range.selectNodeContents(document.getElementById("scriptOutput"));
+                selection.removeAllRanges();
+                selection.addRange(range);
+                button.textContent = "SELECTED — COPY IT";
+            }
+        });
+
+        // Return to the form for edits.
+        document.getElementById("editButton").addEventListener("click", function () {
+            storyLab.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+            topicInput.focus({ preventScroll: true });
+        });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
